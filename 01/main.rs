@@ -1,20 +1,7 @@
-// use std::env;
-use std::{
-    fs::File,
-    io::{prelude::*, BufReader},
-    path::Path,
-};
-
-fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
-    let file = File::open(filename).expect("no such file");
-    let buf = BufReader::new(file);
-    buf.lines()
-        .map(|l| l.expect("unable to parse line"))
-        .collect()
-}
+#[path = "../libs/helper.rs"] mod helper;
 
 fn main() {
-    let lines = lines_from_file("./input.txt");
+    let lines = helper::lines_from_file("./input.txt");
 
     let mut first_vec: Vec<i32> = vec![];
     let mut second_vec: Vec<i32> = vec![];
