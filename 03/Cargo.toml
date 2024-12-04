@@ -1,0 +1,9 @@
+[package]
+name = "day3"
+
+[[bin]]
+name = "main"
+path = "main.rs"
+
+[dependencies]
+regex = "1.11.1"
